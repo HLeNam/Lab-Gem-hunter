@@ -62,3 +62,6 @@ class GemHunterGrid:
         for row in self.grid:
             grid_str += ", ".join(str(cell) for cell in row) + "\n"
         return grid_str.strip()
+
+    def clone(self):
+        return GemHunterGrid(self.rows, self.cols, [row[:] for row in self.grid])
